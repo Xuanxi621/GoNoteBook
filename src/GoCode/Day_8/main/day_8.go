@@ -16,8 +16,18 @@ func addNum(n1 int,n2 int) (int){
 	return sum
 }
 
+// agrs...int 可以传入多个任务int参数
+func test (args...int){
+	// 函数内容处理可变参数的时候,可变参数当作切片处理
+	for i :=0 ; i< len(args); i++ {
+		fmt.Println(args[i])
+	}
+}
+
 func main(){
 	num1 := 1
 	num2 := 2
-	fmt.Printf("Sum : %d",add(num1,num2))
+	fmt.Printf("Sum : %d",addNum(num1,num2))
+
+	test(12,222,334,1441)
 }
